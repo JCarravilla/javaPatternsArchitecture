@@ -18,6 +18,7 @@
         <java.version>1.8</java.version>
 
         <lombok.version>1.16.20</lombok.version>
+        <maven-assembly.version>3.1.0</maven-assembly.version>
 
         <junit.version>4.12</junit.version>
         <mockito.version>2.15.0</mockito.version>
@@ -44,6 +45,13 @@
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit4</artifactId>
+            <version>2.12.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -63,7 +71,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4.1</version>
+                <version>${maven-assembly.version}</version>
                 <configuration>
                     <!-- get all project dependencies -->
                     <descriptorRefs>
@@ -90,7 +98,6 @@
             </plugin>
         </plugins>
     </build>
-
 
     
 </project>
